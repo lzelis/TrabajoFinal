@@ -119,21 +119,21 @@ class PostDetail(DetailView):
 class PostCreate(LoginRequiredMixin, CreateView):
 
     model = Posts
-    success_url = reverse_lazy('posts_lista')  # Redirecciono a la vista de posts luego de crear un post
+    success_url = reverse_lazy('posts_list')  # Redirecciono a la vista de posts luego de crear un post
     fields = ['titulo', 'subtitulo', 'cuerpo', 'autor', 'fecha', 'imagen']
 
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
 
     model = Posts
-    success_url = reverse_lazy('posts_lista')
+    success_url = reverse_lazy('posts_list')
     fields = ['titulo', 'subtitulo', 'cuerpo']
 
   
 class PostDelete(LoginRequiredMixin, DeleteView):
 
     model = Posts
-    success_url = reverse_lazy('posts_lista')
+    success_url = reverse_lazy('posts_list')
    
        
 class AutoresList(ListView):
@@ -149,18 +149,18 @@ class AutoresDetail(DetailView):
 class AutoresCreate(LoginRequiredMixin, CreateView):
 
     model = Autores
-    success_url = reverse_lazy('autores_lista') # Redirecciono a la vista de autores luego de crear un autor
+    success_url = reverse_lazy('autores_list') # Redirecciono a la vista de autores luego de crear un autor
     
     fields = ['nombre', 'apellido', 'email', 'imagen']
 
 class AutoresUpdate(LoginRequiredMixin, UpdateView):
 
     model = Autores
-    success_url = reverse_lazy('autores_lista')
+    success_url = reverse_lazy('autores_list')
     fields = ['nombre', 'apellido', 'email']
 
 class AutoresDelete(LoginRequiredMixin, DeleteView):
 
     model = Autores
-    success_url = reverse_lazy('autores_lista')  
+    success_url = reverse_lazy('autores_list')  
 

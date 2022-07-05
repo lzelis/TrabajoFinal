@@ -15,7 +15,6 @@ class Posts(models.Model):
     autor = models.CharField(max_length=40)
     fecha = models.DateField(default=datetime.now)
     imagen = models.URLField(max_length = 255, blank = False, null= False)
-    estado = models.BooleanField('Publicado/No publicado', default = True) 
 
     class Meta:
         verbose_name_plural = "Posts"
