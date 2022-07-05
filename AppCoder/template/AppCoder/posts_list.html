@@ -1,0 +1,33 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<h1>Esta es la sección de las historias</h1>
+{% for post in object_list %} <!-- object_list es una lista de post -->
+
+<br>
+<br>
+<div class="card mb-4">
+  
+  <div class="card-body">
+    <li>{{post}}</li>
+
+  </div>
+</div>  
+
+
+<button>
+  <a href="{% url 'posts_detalle' post.id %}">Detalle</a>
+</button>
+<button>
+  <a href="{% url 'posts_editar' post.id %}">Editar</a>
+</button>
+<button>
+  <a href="{% url 'posts_borrar' post.id %}">Borrar</a>
+</button>
+{% endfor %}
+<br>
+<br>
+<button>
+  <a href="{% url 'posts_crear' %}">Crear</a>
+</button>
+{% endblock %}
